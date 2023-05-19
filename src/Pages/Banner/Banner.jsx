@@ -1,27 +1,24 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import img1 from './../../assets/Images/banner/front-wheel.png'
+import img1 from '../../assets/Images/banner/parts1.png'
 
 // import "./styles.css";
 
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Banner() {
   return (
-    <div className="h-64">
+    <div className="h-68">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -31,15 +28,15 @@ export default function Banner() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>{img1}</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+                 
+        <SwiperSlide><img className="h-auto"  src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
       </Swiper>
     </div>
   );
