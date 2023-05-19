@@ -3,7 +3,7 @@ import img1 from '../../assets/Images/banner/parts7.png'
 
 const About = () => {
     return (
-        <div className="hero my-20 bg-gray-900">
+        <div className="hero my-20 bg-gray-400">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="w-1/2">
                 <img src={img1}
