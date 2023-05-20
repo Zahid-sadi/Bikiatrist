@@ -4,7 +4,6 @@ const Accessory = ({accessory}) => {
     const {title, img, price} = accessory;
     return (
         <div>
-          
             <div className="card  w-96 bg-base-100 shadow-xl my-7">
                 <figure className="px-10 pt-10">
                     <img src={img} alt="servicePhoto" className="rounded-xl h-80" />
