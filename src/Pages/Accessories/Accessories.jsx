@@ -18,7 +18,7 @@ const Accessories = () => {
                     <p>we sale our responsiblity so that you can utilise your valubale time money and everything</p>
                 </div>
             </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-4">
                 {accessories.map((accessory) => (
                     <Accessory key={accessory._id} accessory={accessory}></Accessory>
                 ))}
