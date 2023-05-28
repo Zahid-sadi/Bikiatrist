@@ -10,8 +10,8 @@ const Login = () => {
         event.preventDefault();
         
         const form = event.target;
-        const email = form.target.value;
-        const password = form.target.value;
+        const email = form.email.value;
+        const password = form.password.value;
 
         form.reset()
 

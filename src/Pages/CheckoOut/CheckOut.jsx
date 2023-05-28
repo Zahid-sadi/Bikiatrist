@@ -3,13 +3,14 @@ import { useLoaderData } from "react-router";
 import { authContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const CheckOut = () => {
-    const {_id, email, price, title, } = useLoaderData()
+    const {_id, price, title, } = useLoaderData()
     const {user} = useContext(authContext)
 
     const handleToOrder = event =>{
         event.preventDefault();
         const form = event.target;
-        const name = `${form.farstName.value} ${form.lastName.value}`;
+        const name = `${form.firstName.value} ${form.lastName.value}`;
+        // const name = user?.firstName
         const email = user?.email || 'unregistered'
         const phone = form.phone.value;
         const message = form.message.value;
@@ -24,22 +25,40 @@ const CheckOut = () => {
             phone,
             message,
         }
+        fetch('http://localhost:5000/orders',{
+            method : 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(order)
+
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.acknowledged){
+                
+                alert('order placed')
+            }
+        })
         
     }
 
     return (
-        <div className="text-center mx-5 ">
+        <form onSubmit={handleToOrder} className="text-center mx-5 ">
             <h2 className="text-info text-lg font-mono font-extrabold">Title: {title}</h2>
-            <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mx-5" action="">
-                <input name="firstName" type="text" placeholder="First Name" className="input input-bordered w-full" />
+            <h5>Price : {price}</h5>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mx-5">
+                <input name="firstName" type="text" placeholder="First Name"  className="input input-bordered w-full" />
                 <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered w-full " />
-                <input name="phone" type="phone" placeholder="Phone Number" className="input input-bordered  w-full" />
-                <input name="email" type="email" defaultValue={user?.email} placeholder="Your Number" className="input input-bordered w-full " />
+                <input name="phone" type="" placeholder="Phone Number" className="input input-bordered  w-full" />
+                <input name="email" type="email" defaultValue={user?.email} readOnly placeholder="Your Email" className="input input-bordered w-full " />
 
-            </form>
+            </div>
             
             <textarea name ='message' className="textarea textarea-warning my-4 w-full" placeholder="Details"></textarea>
-        </div>
+            <input className="btn btn-success my-5" type="submit" value="place order" />
+        </form>
     );
 };
 

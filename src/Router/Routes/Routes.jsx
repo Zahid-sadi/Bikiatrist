@@ -3,6 +3,7 @@ import CheckOut from "../../Pages/CheckoOut/CheckOut";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/Logout/signUp";
+import Orders from "../../Pages/Orders/Orders";
 import ViewDetails from "../../Pages/ViewDetails/ViewDetails";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -32,9 +33,13 @@ const router = createBrowserRouter([
             loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
-          path:'checkout/:id',
+          path:'/checkout/:id',
           element:<CheckOut></CheckOut>,
           loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:'/orders',
+          element:<Orders></Orders>
         }
       ]
     },
