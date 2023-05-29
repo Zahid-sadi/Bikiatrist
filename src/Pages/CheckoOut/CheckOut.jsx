@@ -14,6 +14,7 @@ const CheckOut = () => {
         const email = user?.email || 'unregistered'
         const phone = form.phone.value;
         const message = form.message.value;
+        form.reset()
 
 
         const order = {

@@ -15,31 +15,51 @@ const Orders = () => {
         });
     }, [user?.email]);
 
-    return (
-        <div>
-            <h2> You HAVE placed {orders.length}</h2>
+    const deleteHandler = id =>{
+ 
+        const proceed = window.confirm('its deleting')
+        if(proceed){
+            fetch(`http://localhost:5000/orders/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res=> res.json())
+            .then(data =>{
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('deleted');
+                    const remaining = orders.filter(order=>order._id !== id);
+                    setOrders(remaining)
+                }
+            })
+        }
+    }
 
-            <div className="overflow-x-auto w-full">
+    return (
+      
+        <div>
+            <h2 className="text-5xl">You have {orders.length} Orders</h2>
+            <div className="overflow-x-auto w-full ">
                 <table className="table w-full">
-                <thead>
+                    <thead>
                         <tr>
-                            <th>
-                            </th>
-                            <th>Image/Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th></th>
+                            <th>sarvice name / Price</th>
+                            <th>customer / phone</th>
+                            <th>details</th>
                             <th></th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {orders.map((order) => (
+                            <OrderDetail 
+                            key={order._id} order={order}
+                            deleteHandler={deleteHandler}
+                            
+                            ></OrderDetail>
+                        ))}
+                    </tbody>
                 </table>
             </div>
-
-            {orders.map((order) => (
-                <OrderDetail 
-                 key={order._id} 
-                 order={order}
-                ></OrderDetail>
-            ))}
         </div>
     );
 };
