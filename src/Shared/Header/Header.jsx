@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
     const navItems = <>
-    <li><Link to="">home</Link></li>
+    <li><Link to="/">home</Link></li>
     <li><Link to="/orders">orders</Link></li>
 
     </>
     return (
         <div>
-            <div className="navbar bg-base-100 mb-7">
+            <div className="navbar -mb-12 fixed  text-neutral-content bg-transparent h-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -13,17 +13,19 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Banner() {
   return (
-    <div className="h-68">
+    <div className="h-screen w-full">
       <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 5500,
-          disableOnInteraction: false,
-        }}
+        // spaceBetween={30}
+        // centeredSlides={true}
+        // autoplay={{
+        //   delay: 5500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
+        // direction={"vertical"}
+
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"

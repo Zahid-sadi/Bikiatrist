@@ -1,10 +1,13 @@
 import Main from "../../Layout/Main";
-import CheckOut from "../../Pages/CheckoOut/CheckOut";
+import Accessories from "../../Pages/Accessories/Accessories";
+import CheckOut from "../../Pages/CheckOut/CheckOut";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/Logout/signUp";
 import Orders from "../../Pages/Orders/Orders";
+import Services from "../../Pages/Services/Services";
 import ViewDetails from "../../Pages/ViewDetails/ViewDetails";
+import Footer from "../../Shared/Footer/Footer";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -23,9 +26,22 @@ const router = createBrowserRouter([
             element:<Login></Login>,
         },
         {
+            path:'/services',
+            element: <Services></Services>
+        },
+        {
+            path:'/accessories',
+            element: <Accessories></Accessories>,
+        },
+      
+        {
             path:'/signUp',
             element:<SignUp></SignUp>,
         },
+        {
+          path:'/footer',
+          element:<Footer></Footer>,
+      },
         {
             path:'/viewdetails/:id',
             element:<ViewDetails></ViewDetails>,
@@ -34,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/checkout/:id',
-          element:<CheckOut></CheckOut>,
+          element: <CheckOut></CheckOut>,
           loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
