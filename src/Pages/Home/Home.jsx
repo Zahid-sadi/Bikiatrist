@@ -1,20 +1,17 @@
 import React from "react";
-import Banner from "../Banner/Banner";
-import About from "../About/About";
 import BannerUi from "../../UiComponents/BannerUi/BannerUi";
 import AboutUi from "../../UiComponents/AboutUi/AboutUi";
 import ServiceUi from "../../UiComponents/ServiceUi/ServiceUi";
 import ProductsUi from "../../UiComponents/ProductsUi/ProductsUi";
+import ContactUi from "../../UiComponents/ContactUi/ContactUi";
+import FooterUi from "../../UiComponents/FooterUi/FooterUi";
 
 const Home = () => {
     return (
         <div>
-           
-           
-            
-           
-            <div className="h-screen w-screen carousel carousel-vertical">
-                <div className="carousel-item h-screen w-screen">
+           <div className="h-screen w-screen carousel carousel-vertical">
+              
+                <div className="carousel-item h-screen w-full overflow-hidden">
                <BannerUi></BannerUi>
                 </div>
                 <div className="carousel-item h-screen w-screen">
@@ -26,6 +23,13 @@ const Home = () => {
                 <div className="carousel-item h-screen w-screen">
                 <ProductsUi></ProductsUi>
                 </div>
+                <div className="carousel-item h-screen w-screen">
+                <ContactUi></ContactUi>
+                </div>
+                <div className="carousel-item h-screen w-screen">
+                <FooterUi></FooterUi>
+                </div>
+                
                
             </div>
         </div>

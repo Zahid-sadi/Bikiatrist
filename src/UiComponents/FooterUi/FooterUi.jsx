@@ -1,24 +1,31 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import imgFooter from  "../../assets/Images/banner/bike5.jpg"
 
 const FooterUi = () => {
     return (
-        <div className="hero h-screen w-screen bg-black m-0">
-        <img
-            className="h-screen w-full"
-            src="https://media.istockphoto.com/id/1091317856/photo/stylish-vintage-hobby-motorcycle-garage-workshop.jpg?s=612x612&w=0&k=20&c=WID-qXf6U4bPGOFupJA_-k77hjxSoIpt54OvpPzW8mY="
-            alt=""
-        />
-
-       
-            <div className="mb-0 translate-y-full ">
-                <p className=" text-xl font-bold mx-auto  p-10 text-neutral-content text-orange-500 ">We will be pleased if you know us</p>
-                <Link to="/footer" className="btn btn-block rounded-3xl bg-yellow-500 hover:bg-red-900 delay-500">
-                    Get Access{" "}
-                </Link>
+        <div className="hero h-screen w-screen">
+            <img
+                className="h-screen w-full overflow-hidden"
+                src={imgFooter}
+                alt=""
+            />
+            <div className="hero-overlay bg-opacity-40"></div>
+            <div className="hero-content  text-center text-neutral-content">
+                <div className="max-w-md">
+                    <h1 className="mb-5 text-6xl font-extrabold font-serif"> Footer</h1>
+                    <p className="mb-5">
+                     
+                    </p>
+                    <Link
+                        to="/products"
+                        className=" animate-pulse btn btn-block bg-transparent rounded-3xl border-2 border-b-indigo-600 hover:bg-gradient-to-r from-orange-500 via-yellow-500 to-red-500 ... delay-500"
+                    >
+                        Push the door {" "}
+                    </Link>{" "}
+                </div>
             </div>
-      
-    </div>
+        </div>
     );
 };
 

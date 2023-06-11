@@ -1,45 +1,18 @@
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import React  from 'react';
 
-import img1 from '../../assets/Images/banner/parts1.png'
+import vdo from '../../assets/vedio/Brutale 1000 RR - Monaco by Night.mp4'
+import Header from '../../Shared/Header/Header';
 
-// import "./styles.css";
 
-import { Autoplay, Pagination, Navigation } from "swiper";
+const Banner = () => {
 
-export default function Banner() {
   return (
-    <div className="h-screen w-full">
-      <Swiper
-        // spaceBetween={30}
-        // centeredSlides={true}
-        // autoplay={{
-        //   delay: 5500,
-        //   disableOnInteraction: false,
-        // }}
-        pagination={{
-          clickable: true,
-        }}
-        // direction={"vertical"}
-
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-                 
-        <SwiperSlide><img className="h-auto"  src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-        <SwiperSlide><img className="h-auto" src={img1} alt="" /></SwiperSlide>
-      </Swiper>
+    <div className='w-screen h-screen relative  z-0 bg-transparent pointer-events-none' >
+      <Header></Header>
+      <video className='top-0 left-0 w-full h-full object-cover' autoPlay loop muted  src={vdo}></video>
     </div>
   );
-}
+};
+
+export default Banner;

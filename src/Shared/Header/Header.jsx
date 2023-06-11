@@ -10,10 +10,10 @@ const Header = () => {
     </>
     return (
         <div>
-            <div className="navbar -mb-12 fixed  text-neutral-content bg-transparent h-10">
+            <div className="navbar -mb-12 fixed  text-neutral-content  h-10  ">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost hover:bg-red-600 lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -31,22 +31,22 @@ const Header = () => {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            className="menu menu-compact dropdown-content mt-3 p-2 hover:bg-orange-500 w-52">
                                 {navItems}
                         </ul>
                     </div>
-                    <Link to="/" className="normal-case text-xl">
-                        Bikiatrist
+                    <Link to="/" className="normal-case text-2xl font-bold text-amber-700">
+                        Bikeatrist
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 hover:text-orange-500">
                         {navItems}
                        
                     </ul>
                 </div>
                 <div className="navbar-end">
-                   <Link className="rounded-s-lg bg-lime-500 p-3" to ='/login'>Login</Link>
+                   <Link className="rounded-s-lg bg-orange-900 p-3" to ='/login'>Login</Link>
                 </div>
             </div>
         </div>
